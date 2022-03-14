@@ -114,6 +114,7 @@ export PIP_CONFIG_FILE=/etc/pip.conf
 source ~/.ros2-scm-utils.zsh
 export ROS2VER=foxy
 
+alias vim='nvim'
 alias tf2='TMPDIR=$(pwd) && cd /var/tmp && ros2 run tf2_tools view_frames.py && mupdf frames.pdf && cd $TMPDIR'
 
 # KITTY

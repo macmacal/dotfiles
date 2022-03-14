@@ -4,6 +4,7 @@
     ~/.config/kitty: kitty
     ~/.config/ranger/rc.conf: ranger.conf
     ~/.config/yakuakerc: yakuakerc
+    ~/.config/nvim/init.vim: nvim/init.vim
     ~/.scripts:
       create: true
       path: scripts
