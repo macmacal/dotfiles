@@ -34,3 +34,9 @@ fi
 # KITTY
 alias icat="kitty +kitten icat"
 
+# Neovim fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf Fuzzy Search
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
