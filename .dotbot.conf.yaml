@@ -1,0 +1,17 @@
+- clean: ['~']
+
+- link:
+    ~/.config/kitty: kitty
+    ~/.config/ranger/rc.conf: ranger.conf
+    ~/.config/yakuakerc: yakuakerc
+    ~/.scripts:
+      create: true
+      path: scripts
+    ~/.zshrc: zshrc
+
+- create:
+    - ~/scripts
+    - ~/repos
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
