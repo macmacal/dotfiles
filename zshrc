@@ -38,5 +38,6 @@ alias icat="kitty +kitten icat"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf Fuzzy Search
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# TODO - learn how to use fzf
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
