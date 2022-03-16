@@ -16,7 +16,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " YouCompleteMe autocompletion
-"Plug 'ycm-core/YouCompleteMe' 
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 
 "Automatic adding closing brackets
 Plug 'jiangmiao/auto-pairs'
@@ -70,6 +70,19 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
+" YCM settings
+let g:ycm_max_num_candidates = 5
+let g:ycm_warning_symbol = '>'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_max_diagnostics_to_display = 0  " Reference: https://github.com/ycm-core/YouCompleteMe/issues/2392
+
+" YCM Error & Warning Color Scheme
+" https://jonasjacek.github.io/colors/
+hi YcmErrorSection ctermbg=0 cterm=underline
+hi YcmWarningSection ctermbg=0 cterm=underline
+
 
 " KEYBINDINGS
 " ###############################################
@@ -80,6 +93,9 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
+
+" YCM
+nnoremap <A-b> :YcmCompleter GoTo<CR>  " Go to definition
 
 " NERDTree
 nnoremap <C-g> :NERDTreeToggle<CR>
