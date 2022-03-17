@@ -36,7 +36,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set encoding=utf8
-set guifont=JetBrainsMono\ Nerd\ Font\ 11
+set guifont=Fira_Code_Nerd_Font:h11
 
 "Airline setup
 let g:airline_powerline_fonts = 1
@@ -58,6 +58,7 @@ let g:NERDDefaultAlign = 'left'
 "Configure NERDTree
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeShowHidden = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 
 " Rainbow brackets
 let g:rainbow_active = 1
@@ -82,7 +83,6 @@ let g:ycm_max_diagnostics_to_display = 0  " Reference: https://github.com/ycm-co
 " https://jonasjacek.github.io/colors/
 hi YcmErrorSection ctermbg=0 cterm=underline
 hi YcmWarningSection ctermbg=0 cterm=underline
-
 
 " KEYBINDINGS
 " ###############################################
