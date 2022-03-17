@@ -31,6 +31,8 @@ else
   export EDITOR='nvim'
 fi
 
+alias dotfiles="cd ~/.dotfiles"
+
 # KITTY
 alias icat="kitty +kitten icat"
 
