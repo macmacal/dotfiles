@@ -32,7 +32,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'frazrepo/vim-rainbow'
 
 "Additonal Icons
+" TODO fix conceal in neovim
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 set encoding=utf8
