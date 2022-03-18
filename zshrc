@@ -35,6 +35,7 @@ alias dotfiles="cd ~/.dotfiles"
 
 # KITTY
 alias icat="kitty +kitten icat"
+alias ssh="kitty +kitten ssh"
 
 # Neovim fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
