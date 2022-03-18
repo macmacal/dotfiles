@@ -95,6 +95,11 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
+"" Insert empty line
+nnoremap <C-o> :put _<CR>
+"" Move lines with alt
+nnoremap <A-j> :m+1<CR>
+nnoremap <A-k> :m-2<CR>
 
 " YCM
 nnoremap <A-b> :YcmCompleter GoTo<CR>  " Go to definition
