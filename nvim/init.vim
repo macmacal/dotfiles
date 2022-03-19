@@ -25,6 +25,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 
 "Airline status tabline
+Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
