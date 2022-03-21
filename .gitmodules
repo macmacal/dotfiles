@@ -2,3 +2,11 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "kitty_grab"]
+	path = kitty/kitty_grab
+	url = https://github.com/yurikhan/kitty_grab
+	ignore = dirty
+
+[submodule "kitty/kitty_grab"]
+	path = kitty/kitty_grab
+	url = https://github.com/yurikhan/kitty_grab.git

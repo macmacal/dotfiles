@@ -34,8 +34,10 @@ fi
 alias dotfiles="cd ~/.dotfiles"
 
 # KITTY
-alias icat="kitty +kitten icat"
-alias ssh="kitty +kitten ssh"
+if [ $TERM = "xterm-kitty" ]; then
+ alias icat="kitty +kitten icat"
+ alias setup_kitty_ssh="kitty +kitten ssh"
+fi
 
 # Neovim fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
