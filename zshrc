@@ -39,6 +39,10 @@ if [ $TERM = "xterm-kitty" ]; then
  alias setup_kitty_ssh="kitty +kitten ssh"
 fi
 
+# DOCKER
+alias doc=docker
+alias docc=docker-compose
+
 # Neovim fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
