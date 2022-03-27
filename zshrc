@@ -49,8 +49,10 @@ alias docc=docker-compose
 # fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND='fd --type file'
+# TODO: read about fd file type selection (for neovim integration)
+export FZF_DEFAULT_COMMAND="fd ."
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d"
 
 # man highlighting with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"

@@ -12,7 +12,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'hankchiutw/nerdtree-ranger.vim'
 
 "Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " YouCompleteMe autocompletion
@@ -34,12 +34,16 @@ Plug 'frazrepo/vim-rainbow'
 
 "Additonal Icons
 " TODO fix conceal in neovim
-Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set encoding=utf8
 set guifont=Fira_Code_Nerd_Font:h11
+set conceallevel=3
+
+" FZF
+let g:loaded_python_provider = 1
 
 "Airline setup
 let g:airline_powerline_fonts = 1
@@ -110,3 +114,11 @@ nnoremap <C-g> :NERDTreeToggle<CR>
 
 " FZF
 nnoremap <C-n> :Files<CR>
+
+" ###############################################
+"Fix syntax matching issues (concealing brackets in NERDTree)
+syntax enable
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif
+autocmd VimEnter * source ~/.config/nvim/init.vim
