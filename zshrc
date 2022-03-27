@@ -46,7 +46,11 @@ alias docc=docker-compose
 # Neovim fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fzf Fuzzy Search
-# TODO - learn how to use fzf
-# source /usr/share/fzf/key-bindings.zsh
-# source /usr/share/fzf/completion.zsh
+# fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# man highlighting with bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
