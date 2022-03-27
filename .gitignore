@@ -3,3 +3,4 @@
 dotbot/
 kitty/kitty_grab/
 
+!.dotbot.conf.yaml
