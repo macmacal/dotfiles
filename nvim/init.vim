@@ -110,10 +110,12 @@ nnoremap <A-k> :m-2<CR>
 nnoremap <A-b> :YcmCompleter GoTo<CR>  " Go to definition
 
 " NERDTree
-nnoremap <C-g> :NERDTreeToggle<CR>
+nnoremap <C-r> :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " FZF
-nnoremap <C-n> :Files<CR>
+nnoremap <C-g> :Files<CR>
 
 " ###############################################
 "Fix syntax matching issues (concealing brackets in NERDTree)
