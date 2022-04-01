@@ -41,6 +41,13 @@ call plug#end()
 set encoding=utf8
 set guifont=Fira_Code_Nerd_Font:h11
 set conceallevel=3
+set hidden
+nnoremap <space> <Nop>
+let leader = "<space>"
+
+set undofile
+set undodir=~/.vimundo
+set undolevels=10000
 
 " FZF
 let g:loaded_python_provider = 1
@@ -52,7 +59,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 "NERDCommenter
-let leader = '\'
 filetype plugin on
 let g:NERDCreateDefaultMappings = 1
 let g:NERDSpaceDelims = 1
@@ -93,6 +99,13 @@ hi YcmWarningSection ctermbg=0 cterm=underline
 
 " KEYBINDINGS
 " ###############################################
+
+" Training blockers
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+set clipboard+=unnamedplus
 
 " Vanilla
 "" Windows naviation
