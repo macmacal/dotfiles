@@ -21,9 +21,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Machine depended config
-source ~/.zshrc_local
-
 alias vim='nvim'
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
@@ -36,7 +33,9 @@ alias dotfiles="cd ~/.dotfiles"
 # KITTY
 if [ $TERM = "xterm-kitty" ]; then
  alias icat="kitty +kitten icat"
- alias setup_kitty_ssh="kitty +kitten ssh"
+ alias setup-kitty-ssh="kitty +kitten ssh"
+ alias clip="kitty +kitten clipboard"
+ alias clip-get"kitty +kitten clipboard --get-clipboard"
 fi
 
 # DOCKER
@@ -56,3 +55,6 @@ export FZF_ALT_C_COMMAND="fd --type d"
 
 # man highlighting with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Machine depended config
+source ~/.zshrc_local
