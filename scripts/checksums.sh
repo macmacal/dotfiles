@@ -27,6 +27,7 @@ if [[ -z "${2}" ]]; then
 else
 	SUM=$2
 fi
+SUM=$(echo "$SUM" | tr 'A-Z' 'a-z')
 echo -e "> Input checksum: $SUM"
 echo -e "# # # # # # # # # #"
 
