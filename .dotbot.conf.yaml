@@ -5,6 +5,7 @@
     ~/.config/ranger/rc.conf: ranger.conf
     ~/.config/yakuakerc: yakuakerc
     ~/.config/nvim: nvim
+    ~/.local/share/kxmlgui5/okular/part.rc: okular
     ~/.scripts:
       create: true
       path: scripts
@@ -13,6 +14,7 @@
 - create:
     - ~/scripts
     - ~/repos
+    - ~/.local/share/kxmlgui5/okular
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
