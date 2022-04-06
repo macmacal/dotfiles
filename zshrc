@@ -35,12 +35,15 @@ if [ $TERM = "xterm-kitty" ]; then
  alias icat="kitty +kitten icat"
  alias setup-kitty-ssh="kitty +kitten ssh"
  alias clip="kitty +kitten clipboard"
- alias clip-get"kitty +kitten clipboard --get-clipboard"
+ alias clip-get="kitty +kitten clipboard --get-clipboard"
 fi
 
 # DOCKER
 alias doc=docker
 alias docc=docker-compose
+
+# SCIPRTS
+alias checksum="~/.scripts/checksums.sh"
 
 # Neovim fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
