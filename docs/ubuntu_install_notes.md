@@ -34,7 +34,21 @@ thunderbird \
 tmux \
 tree \
 xdotool \
-zsh 
+zsh \
+```
+
+```bash
+sudo apt install build-essential \
+ca-certificates \
+clang \
+clang-format \
+clang-tidy \
+cmake \
+curl \
+python3-dev \
+python3-pip
+apt update && apt install -y $(eval echo $(cat  < requirements_base_apt.txt))
+pip3 install -r requirements_base_pip.txt
 ```
 
 ### Manually
@@ -71,7 +85,7 @@ zsh
     ```
 * oh-my-zsh
     * `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-    * change default shell -> `/etc/passwd`
+    * change default shell -> `chsh -s /bin/zsh $USER`
 * GPU drivers
     * nvidia-driver, cuda
     * `sudo apt install nvidia-driver-$NEWEST nvidia-dkms-$NEWEST` 
@@ -188,7 +202,11 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 
 ### 11.0.0
 ``bash
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pinsudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pubsudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"sudo apt-get updatesudo apt-get -y install cuda
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pinsudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.debsudo apt-key add /var/cuda-repo-ubuntu2004-11-0-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
 ```
 ## ROS2 install
 
@@ -198,7 +216,7 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/
 sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 sudo apt update
-sudo apt install python3-colcon-common-extensions
+sudo apt install -y python3-colcon-common-extensions
 ```
 
 ### ROS2 Foxy
