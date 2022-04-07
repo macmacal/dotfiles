@@ -60,7 +60,8 @@ source /usr/share/doc/fzf/examples/completion.zsh
 # export FZF_ALT_C_COMMAND="fd --type d"
 
 # man highlighting with bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+alias bat=batcat
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # Machine depended config
 source ~/.zshrc_local
