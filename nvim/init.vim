@@ -118,6 +118,12 @@ nnoremap <C-o> :put _<CR>
 "" Move lines with alt
 nnoremap <A-j> :m+1<CR>
 nnoremap <A-k> :m-2<CR>
+"" Insert one character
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
 " YCM
 nnoremap <A-b> :YcmCompleter GoTo<CR>  " Go to definition
