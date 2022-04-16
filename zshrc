@@ -2,6 +2,7 @@
 # ===========================================================================
     
     # Load Antibody plugin manager
+    export PATH=$HOME/.local/bin:$PATH
     source <(antibody init)
    
     # Setup env vars for ohmyzsh
@@ -111,6 +112,11 @@
     # DOCKER
     alias doc=docker
     alias docc=docker-compose
+
+    # GIT
+    alias g='git'
+    alias ga='git add'
+    alias gs='git status'
 
     # SCRIPTS
     alias checksum="~/.scripts/checksums.sh"
