@@ -1,67 +1,137 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+# Plugins
+# ===========================================================================
+    
+    # Load Antibody plugin manager
+    source <(antibody init)
+   
+    # Setup env vars for ohmyzsh
+    export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+    antibody bundle ohmyzsh/ohmyzsh
+    
+    # Adds cpv function based on rsync
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/cp
 
-ZSH_THEME="agnoster"
+    # Docker autocomplete
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/docker
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
+    
+    # Git autocomlete
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/git
+    # antibody bundle ohmyzsh/ohmyzsh path:plugins/git-flow
 
-DISABLE_UPDATE_PROMPT="true"
-export UPDATE_ZSH_DAYS=13
-COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="yyyy-mm-dd"
+    # Adds `extract` function for any archive filetype
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/extract
 
-plugins=(git)
+    # Integration with fzf and fd commands
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/fzf
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/fd
+    
+    # Adds `jump` and `mark` commands for directories
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/jump
 
-source $ZSH/oh-my-zsh.sh
+    # Informative alliases for nmap syntax
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/nmap
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+    # Autocompletion for pip
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/pip
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+    # Aliases for frequent rsync commands
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/rsync
+    
+    # Integration with `z` command for jumping to the most recent directories
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/z
 
-alias vim='nvim'
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+    # TODO: Read about ack
+    # antibody bundle sampson-chen/sack
+    
+    # Grey-autosugesstion
+    antibody bundle zsh-users/zsh-autosuggestions
 
-alias dotfiles="cd ~/.dotfiles"
+    # Fish-like highlight (must be the last)
+    antibody bundle zsh-users/zsh-syntax-highlighting
 
-# KITTY
-if [ $TERM = "xterm-kitty" ]; then
- alias icat="kitty +kitten icat"
- alias setup-kitty-ssh="kitty +kitten ssh"
- alias clip="kitty +kitten clipboard"
- alias clip-get="kitty +kitten clipboard --get-clipboard"
-fi
+    # Theme
+    antibody bundle ohmyzsh/ohmyzsh path:themes/agnoster.zsh-theme
 
-# DOCKER
-alias doc=docker
-alias docc=docker-compose
+# // Plugins
 
-# SCIPRTS
-alias checksum="~/.scripts/checksums.sh"
 
-# Neovim fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Configuration
+# ===========================================================================
+    
+    HYPHEN_INSENSITIVE="true"
+    COMPLETION_WAITING_DOTS="true"
+    HIST_STAMPS="yyyy-mm-dd"
+    #ZSH_THEME="agnoster"
 
-# fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-# TODO Fix for ubuntu
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
-# TODO: read about fd file type selection (for neovim integration)
-# export FZF_DEFAULT_COMMAND="fd ."
-# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# export FZF_ALT_C_COMMAND="fd --type d"
+    # PATH
+    typeset -U path cdpath fpath
+    path=(
+        $HOME/.local/bin
+        $HOME/.bin
+        $HOME/bin
+        $path
+    )
 
-# man highlighting with bat
-alias bat=batcat
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+    # Neovim usage
+    export EDITOR='nvim'
+    export GIT_EDITOR='nvim'
+    if [[ -n $SSH_CONNECTION ]]; then
+      export EDITOR='nvim'
+    else
+      export EDITOR='nvim'
+    fi
+
+    # man highlighting with bat
+    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+
+# // Configuration
+
+
+# Aliases & functions
+# ===========================================================================
+
+    # VARIA
+    alias bat='batcat'
+    alias cat='bat'
+    alias copy='xclip -selection clipboard'
+    alias dotfiles="cd ~/.dotfiles"
+    alias paste='xclip -o -selection clipboard'
+    alias vim='nvim'
+    
+    # KITTY
+    if [ $TERM = "xterm-kitty" ]; then
+      alias copy="kitty +kitten clipboard"
+      alias icat="kitty +kitten icat"
+      alias kitty_setup_ssh="kitty +kitten ssh"
+      alias paste="kitty +kitten clipboard --get-clipboard"
+    fi
+
+    # DOCKER
+    alias doc=docker
+    alias docc=docker-compose
+
+    # SCRIPTS
+    alias checksum="~/.scripts/checksums.sh"
+
+    # Neovim fuzzy finder
+    # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+    # fzf TODO read more about ack/ag commands and usage with fzf + fd
+    # source /usr/share/fzf/key-bindings.zsh
+    # source /usr/share/fzf/completion.zsh
+    # TODO Fix for ubuntu
+    # source /usr/share/doc/fzf/examples/key-bindings.zsh
+    # source /usr/share/doc/fzf/examples/completion.zsh
+    # TODO: read about fd file type selection (for neovim integration)
+    # export FZF_DEFAULT_COMMAND="fd ."
+    # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    # export FZF_ALT_C_COMMAND="fd --type d"
+
+# // Aliases & functions
+
 
 # Machine depended config
-source ~/.zshrc_local
+# ===========================================================================
+    source ~/.zshrc_local
