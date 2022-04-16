@@ -10,3 +10,9 @@
 [submodule "kitty/kitty_grab"]
 	path = kitty/kitty_grab
 	url = https://github.com/yurikhan/kitty_grab.git
+[submodule "ranger/ranger_devicons"]
+	path = ranger/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+[submodule "ranger/plugins/ranger_devicons"]
+	path = ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git

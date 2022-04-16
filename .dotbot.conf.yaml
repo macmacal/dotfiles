@@ -1,8 +1,13 @@
 - clean: ['~']
 
+- create:
+    - ~/scripts
+    - ~/repos
+    - ~/.local/share/kxmlgui5/okular
+
 - link:
     ~/.config/kitty: kitty
-    ~/.config/ranger/rc.conf: ranger.conf
+    ~/.config/ranger: ranger
     ~/.config/yakuakerc: yakuakerc
     ~/.config/nvim: nvim
     ~/.local/share/kxmlgui5/okular/part.rc: okular
@@ -10,11 +15,6 @@
       create: true
       path: scripts
     ~/.zshrc: zshrc
-
-- create:
-    - ~/scripts
-    - ~/repos
-    - ~/.local/share/kxmlgui5/okular
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
