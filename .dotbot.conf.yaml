@@ -30,4 +30,4 @@
   - ['sh .dotbot_scripts/install_plugin_managers.sh', Installing neovim & ZSH plugin managers]
   - ['nvim +PlugUpdate +PlugClean! +qa', Installing neovim plugins]
   - ['zsh', Installing zsh plugins]
-  - ['sh .dotbot_scripts/recompile_dwm_dmenu.sh', Recompiling dwm & dmenu]
+  - ['sh scripts/recompile_dwm_dmenu.sh', Recompiling dwm & dmenu]

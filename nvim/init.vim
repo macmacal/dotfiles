@@ -129,7 +129,6 @@ nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap <A-b> :YcmCompleter GoTo<CR>  " Go to definition
 
 " NERDTree
-nnoremap <C-r> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 

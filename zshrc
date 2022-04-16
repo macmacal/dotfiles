@@ -102,11 +102,11 @@
     alias vim='nvim'
     
     # KITTY
-    if [ $TERM = "xterm-kitty" ]; then
-      alias copy="kitty +kitten clipboard"
-      alias icat="kitty +kitten icat"
-      alias kitty_setup_ssh="kitty +kitten ssh"
-      alias paste="kitty +kitten clipboard --get-clipboard"
+    if [ $TERM = 'xterm-kitty' ]; then
+      alias copy='kitty +kitten clipboard'
+      alias icat='kitty +kitten icat'
+      alias kitty_setup_ssh='kitty +kitten ssh'
+      alias paste='kitty +kitten clipboard --get-clipboard'
     fi
 
     # DOCKER
@@ -119,7 +119,8 @@
     alias gs='git status'
 
     # SCRIPTS
-    alias checksum="~/.scripts/checksums.sh"
+    alias checksum='~/.scripts/checksums.sh'
+    alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
 
     # Neovim fuzzy finder
     # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
