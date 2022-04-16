@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # ZSH plugin manager Antibody
 curl -sfL git.io/antibody | sh -s - -b $HOME/.local/bin

@@ -1,23 +1,33 @@
-- clean: ['~']
+- clean: ['~', '~/.config', '~/.local/share']
 
 - create:
     - ~/scripts
     - ~/repos
     - ~/.local/share/kxmlgui5/okular
-
-- link:
-    ~/.config/kitty: kitty
-    ~/.config/ranger: ranger
-    ~/.config/yakuakerc: yakuakerc
-    ~/.config/nvim: nvim
-    ~/.local/share/kxmlgui5/okular/part.rc: okular
-    ~/.scripts:
-      create: true
-      path: scripts
-    ~/.zshrc: zshrc
+    - ~/.local/src
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ['sh ~/.scripts/install_plugin_managers.sh', Installing neovim & ZSH plugin managers]
+  - ['sh .dotbot_scripts/clone_dwm_dmenu.sh', Preparing dwm & dmenu repos]
+
+- link:
+    ~/.config/kitty: kitty
+    ~/.config/nvim: nvim
+    ~/.config/ranger: ranger
+    ~/.config/yakuakerc: yakuakerc
+    ~/.local/share/kxmlgui5/okular/part.rc: okular
+    ~/.local/src/dmenu/config.h: dmenu/config.h
+    ~/.local/src/dmenu/config.mk: dmenu/config.mk
+    ~/.local/src/dwm/config.h: dwm/config.h
+    ~/.local/src/dwm/config.mk: dwm/config.mk
+    ~/.zshrc: zshrc
+    ~/.xinitrc: xinitrc
+    ~/.scripts:
+      create: true
+      path: scripts
+
+- shell:
+  - ['sh .dotbot_scripts/install_plugin_managers.sh', Installing neovim & ZSH plugin managers]
   - ['nvim +PlugUpdate +PlugClean! +qa', Installing neovim plugins]
   - ['zsh', Installing zsh plugins]
+  - ['sh .dotbot_scripts/recompile_dwm_dmenu.sh', Recompiling dwm & dmenu]
