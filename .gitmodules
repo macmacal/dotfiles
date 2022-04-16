@@ -2,26 +2,9 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "kitty_grab"]
-	path = kitty/kitty_grab
-	url = https://github.com/yurikhan/kitty_grab
-	ignore = dirty
-
 [submodule "kitty/kitty_grab"]
 	path = kitty/kitty_grab
 	url = https://github.com/yurikhan/kitty_grab.git
-[submodule "ranger/ranger_devicons"]
-	path = ranger/ranger_devicons
-	url = https://github.com/alexanderjeurissen/ranger_devicons.git
 [submodule "ranger/plugins/ranger_devicons"]
 	path = ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons.git
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen.git
-[submodule "dwm/src"]
-	path = dwm/src
-	url = https://git.suckless.org/dwm
-[submodule "dmenu/src"]
-	path = dmenu/src
-	url = https://git.suckless.org/dmenu
