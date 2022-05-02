@@ -18,3 +18,13 @@ curl -sfL git.io/antibody | sh -s - -b $HOME/.local/bin
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
+
+
+# Custom graphic environement
+* dwm + dmenu
+* feh
+* dwmblocks-async
+
+# dwm patches
+* dwm-statuscmd
+

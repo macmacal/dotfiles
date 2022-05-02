@@ -4,7 +4,7 @@ VERSION = 6.3
 # Customize below to fit your system
 
 # paths
-PREFIX = /home/mad/.local
+PREFIX = /home/${USER}/.local
 MANPREFIX = ${PREFIX}/share/man
 
 X11INC = /usr/X11R6/include

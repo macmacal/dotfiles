@@ -20,11 +20,16 @@
     ~/.local/src/dmenu/config.mk: dmenu/config.mk
     ~/.local/src/dwm/config.h: dwm/config.h
     ~/.local/src/dwm/config.mk: dwm/config.mk
+    ~/.local/src/dwmblocks-async/config.h: dwmblocks-async/config.h
+    ~/.local/src/dwmblocks-async/Makefile: dwmblocks-async/Makefile
     ~/.zshrc: zshrc
     ~/.xinitrc: xinitrc
     ~/.scripts:
       create: true
       path: scripts
+    ~/.local/bin/statusbar:
+      create: true
+      path: local_bin/statusbar
 
 - shell:
   - ['sh .dotbot_scripts/install_plugin_managers.sh', Installing neovim & ZSH plugin managers]
