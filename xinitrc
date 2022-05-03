@@ -8,6 +8,8 @@ xrandr --output HDMI-1 --mode 1920x1080 --rotate right --left-of DP-1 \
 # TODO create folder with wallpapers
 feh --bg-fill ~/images/nier_automata_menu_lines.png
 
-export PATH=~/.local/bin/statusbar:$PATH
+xset +fp ~/.local/share/fonts
+
+export PATH=~/local/bin/statusbar:$PATH
 dwmblocks &
 exec dwm
