@@ -2,8 +2,9 @@
 
 autorandr --change
 
-# TODO create folder with wallpapers
-feh --bg-fill ~/images/nier_automata_menu_lines.png
+# TODO create scripts for automatic wallpaper rotation
+#feh --recursive --bg-fill --randomize ~/images/wallpapers/*
+feh --bg-fill ~/images/wallpapers/yorha_wallpaper.jpg ~/images/wallpapers/yorha_wallpaper.jpg 
 
 xset +fp ~/.local/share/fonts
 

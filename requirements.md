@@ -4,7 +4,10 @@ fzf
 bat
 fd
 xclip
+autorandr
+xorg-xinit
 ```
+
 
 # ZSH plugin manager Antibody
 
