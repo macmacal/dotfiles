@@ -11,6 +11,7 @@
   - ['sh .dotbot_scripts/clone_dwm_dmenu.sh', Preparing dwm & dmenu repos]
 
 - link:
+    ~/.config/autorandr: autorandr
     ~/.config/kitty: kitty
     ~/.config/nvim: nvim
     ~/.config/ranger: ranger
@@ -20,10 +21,10 @@
     ~/.local/src/dmenu/config.mk: dmenu/config.mk
     ~/.local/src/dwm/config.h: dwm/config.h
     ~/.local/src/dwm/config.mk: dwm/config.mk
-    ~/.local/src/dwmblocks-async/config.h: dwmblocks-async/config.h
     ~/.local/src/dwmblocks-async/Makefile: dwmblocks-async/Makefile
-    ~/.zshrc: zshrc
+    ~/.local/src/dwmblocks-async/config.h: dwmblocks-async/config.h
     ~/.xinitrc: xinitrc
+    ~/.zshrc: zshrc
     ~/.scripts:
       create: true
       path: scripts
