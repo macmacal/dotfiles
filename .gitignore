@@ -1,0 +1,9 @@
+*.bak
+
+dotbot/
+kitty/kitty_grab/
+
+!.dotbot.conf.yaml
+
+__init__.py
+__pycache__
