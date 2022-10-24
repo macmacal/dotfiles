@@ -28,12 +28,10 @@ my_term="kitty"
 # get terminal emulator and matching name pid ex: 44040485 
 #pid=$(comm -12 <(xdotool search --name "$my_term" | sort) <(xdotool search --class "$my_term" | sort))
 #pid=$(pidof "$my_term")
-pid=$(comm -12 <(xdotool search --pid $(pidof $my_term | sed "s/ /\n/g" | sort)) <(xdotool search --class "$my_term" | sort))
-
-echo "Hello there mr. $pid"
+pid=$(comm -12 <(xdotool search --pid $(pidof $my_term) | sort) <(xdotool search --class "$my_term" | sort))
+ 
 # start a new terminal if none is currently running
 if [[ -z "$pid" ]]; then
-    echo "NO TERMINAL?"
     while IFS='|' read -ra TERMS; do
         for candidate_term in "${TERMS[@]}"; do
             if command -v "$candidate_term" &>/dev/null; then
@@ -45,7 +43,6 @@ if [[ -z "$pid" ]]; then
         done
     done <<<"$my_term"
   else
-    echo "TERMINAL DETECTED"
     # get windows id from pid ex: 0x2a00125%
     wid=$(printf '0x%x' $pid)
     # maximize terminal emulator

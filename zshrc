@@ -85,7 +85,7 @@
     fi
 
     # man highlighting with bat
-    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # // Configuration
 
@@ -94,7 +94,7 @@
 # ===========================================================================
 
     # VARIA
-    alias bat='batcat'
+    alias batcat='bat'
     alias cat='bat'
     alias copy='xclip -selection clipboard'
     alias dotfiles="cd ~/.dotfiles"
