@@ -28,7 +28,7 @@ my_term="kitty"
 # get terminal emulator and matching name pid ex: 44040485 
 #pid=$(comm -12 <(xdotool search --name "$my_term" | sort) <(xdotool search --class "$my_term" | sort))
 #pid=$(pidof "$my_term")
-pid=$(comm -12 <(xdotool search --pid $(pidof $my_term | sed "s/ /\n/g" | sort)) <(xdotool search --class "$my_term" | sort))
+pid=$(comm -12 <(xdotool search --pid $(pidof $my_term -S $'\n' | sort)) <(xdotool search --class "$my_term" | sort))
 
 echo "Hello there mr. $pid"
 # start a new terminal if none is currently running
