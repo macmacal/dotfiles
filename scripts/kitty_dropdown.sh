@@ -22,7 +22,7 @@ if [[ -z $window_id ]]; then
     ${my_term} &>/dev/null &
   else
     # get windows id from pid ex: 0x2a00125%
-    #wid=$(printf '0x%x' $window_id)
+    wid=$(printf '0x%x' $window_id)
     # toggle show/hide terminal emulator
     mapw -t $wid
     # maximize terminal emulator
