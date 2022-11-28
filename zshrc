@@ -95,12 +95,15 @@
 
     # VARIA
     alias bat='batcat'
-    alias cat='bat'
+    #alias cat='bat'
     alias copy='xclip -selection clipboard'
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
     alias vim='nvim'
     
+    # Follow directory opened in ranger
+    alias r='. ranger'
+
     # KITTY
     if [ $TERM = 'xterm-kitty' ]; then
       alias copy='kitty +kitten clipboard'
