@@ -24,6 +24,9 @@ Plug 'jiangmiao/auto-pairs'
 "Modify surroudings of sandwiched textobject
 Plug 'machakann/vim-sandwich'
 
+" Black Python Formatter
+Plug 'psf/black'
+
 "Airline status tabline
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
