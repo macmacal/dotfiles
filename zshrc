@@ -100,6 +100,7 @@
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
     alias vim='nvim'
+    alias r='ranger'
     
     # KITTY
     if [ $TERM = 'xterm-kitty' ]; then

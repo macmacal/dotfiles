@@ -7,7 +7,14 @@ xclip
 autorandr
 xorg-xinit
 ```
-
+# Tools
+```
+flameshot
+peek
+kitty
+obsidian
+zotero
+```
 
 # ZSH plugin manager Antibody
 
