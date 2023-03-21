@@ -100,6 +100,9 @@
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
     alias vim='nvim'
+
+    # Enable usage of asterisk ('*') like in bash
+    setopt extended_glob
     
     # Follow directory opened in ranger
     alias r='. ranger'
