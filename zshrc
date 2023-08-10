@@ -127,6 +127,7 @@
     # SCRIPTS
     alias checksum='~/.scripts/checksums.sh'
     alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
+    alias gitler='~/.scripts/gitler.sh'
 
     # Neovim fuzzy finder
     # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
