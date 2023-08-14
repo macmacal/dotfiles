@@ -85,7 +85,7 @@
     fi
 
     # man highlighting with bat
-    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # // Configuration
 
@@ -100,6 +100,7 @@
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
     alias vim='nvim'
+    alias r='. ranger'
 
     # Enable usage of asterisk ('*') like in bash
     setopt extended_glob

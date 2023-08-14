@@ -5,14 +5,14 @@
  
 # get screen resolution width and height
 ROOT=$(lsw -r)
-width=$(wattr w $ROOT)
-height=$(wattr h $ROOT)
+width=1920
+height=1080
  
 # select terminal emulator manually
 my_term=kitty
  
 # get terminal emulator and matching name pid ex: 44040485 
-term_pid=$(pidof -d $'\n' $my_term | tail -n1)
+term_pid=$(pidof -S $'\n' $my_term | tail -n1)
 
 # check if the emulator window exists
 window_id=$(comm -12 <(xdotool search --pid $term_pid) <(xdotool search --class $my_term | sort))
@@ -26,5 +26,5 @@ if [[ -z $window_id ]]; then
     # toggle show/hide terminal emulator
     mapw -t $wid
     # maximize terminal emulator
-    wrs $width $height $wid
+    #wrs $width $height $wid
 fi
