@@ -5,8 +5,10 @@
  
 # get screen resolution width and height
 ROOT=$(lsw -r)
-width=1920
-height=1080
+# width=$(wattr w $ROOT)
+# height=$(wattr h $ROOT)
+# width=1920
+# height=1080
  
 # select terminal emulator manually
 my_term=kitty
