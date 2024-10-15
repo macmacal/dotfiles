@@ -1,62 +1,32 @@
 # Plugins
 # ===========================================================================
     
-    # Load Antibody plugin manager
-    export PATH=$HOME/.local/bin:$PATH
-    source <(antibody init)
-   
-    # Setup env vars for ohmyzsh
-    export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh"
+    export PATH=${HOME}/.antidote:$PATH
 
-    antibody bundle ohmyzsh/ohmyzsh
-    
-    # Adds cpv function based on rsync
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/cp
+    # Load Antidote plugin manager
+    source /home/mad/.antidote/antidote.zsh
 
-    # Docker autocomplete
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/docker
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
-    
-    # Git autocomlete
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/git
-    # antibody bundle ohmyzsh/ohmyzsh path:plugins/git-flow
 
-    # Adds `extract` function for any archive filetype
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/extract
+    # Set the root name of the plugins files (.txt and .zsh) antidote will use.
+    zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
-    # Integration with fzf and fd commands
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/fzf
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/fd
-    
-    # Adds `jump` and `mark` commands for directories
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/jump
+    # Ensure the .zsh_plugins.txt file exists so you can add plugins.
+    [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
-    # Informative alliases for nmap syntax
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/nmap
+    # Lazy-load antidote from its functions directory.
+    fpath=(/path/to/antidote/functions $fpath)
+    autoload -Uz antidote
 
-    # Autocompletion for pip
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/pip
+    # Generate a new static file whenever .zsh_plugins.txt is updated.
+    if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+      antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+    fi
 
-    # Aliases for frequent rsync commands
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/rsync
-    
-    # Integration with `z` command for jumping to the most recent directories
-    antibody bundle ohmyzsh/ohmyzsh path:plugins/z
+    # Source your static plugins file.
+    source ${zsh_plugins}.zsh
 
-    # TODO: Read about ack
-    # antibody bundle sampson-chen/sack
-    
-    # Grey-autosugesstion
-    antibody bundle zsh-users/zsh-autosuggestions
 
-    # Fish-like highlight (must be the last)
-    antibody bundle zsh-users/zsh-syntax-highlighting
-
-    # Theme
-    antibody bundle ohmyzsh/ohmyzsh path:themes/agnoster.zsh-theme
-
-# // Plugins
-
+# // Plugins manager
 
 # Configuration
 # ===========================================================================
@@ -84,8 +54,6 @@
       export EDITOR='nvim'
     fi
 
-    # man highlighting with bat
-    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # // Configuration
 
@@ -150,3 +118,4 @@
 # Machine depended config
 # ===========================================================================
     source ~/.zshrc_local
+# // Machine depended config

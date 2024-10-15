@@ -1,0 +1,26 @@
+# Oh-my-zsh
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/magic-enter
+ohmyzsh/ohmyzsh path:plugins/z                  # Integration with `z` command for jumping to the most recent directories
+ohmyzsh/ohmyzsh path:plugins/docker             # Docker autocomplete
+ohmyzsh/ohmyzsh path:plugins/docker-compose     # Docker autocomplete
+ohmyzsh/ohmyzsh path:plugins/git                # Git autocomplete
+ohmyzsh/ohmyzsh path:plugins/extract            # Adds `extract` function for any archive filetype
+ohmyzsh/ohmyzsh path:plugins/fzf                # Integration with fzf command
+ohmyzsh/ohmyzsh path:plugins/jump               # Adds `jump` and `mark` commands for directories
+ohmyzsh/ohmyzsh path:plugins/nmap               # Informative alliases for nmap syntax
+ohmyzsh/ohmyzsh path:plugins/pip                # Autocompletion for pip
+ohmyzsh/ohmyzsh path:plugins/rsync              # Aliases for frequent rsync commands
+
+# Fish-like features
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions                  # Grey-autosugesstion
+zsh-users/zsh-history-substring-search
+
+# TODO: Read about ack
+# sampson-chen/sack
+
+# Theme
+ohmyzsh/ohmyzsh path:themes/agnoster.zsh-theme
