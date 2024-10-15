@@ -1,4 +1,4 @@
-# Plugins
+# Plugins manager
 # ===========================================================================
     
     export PATH=${HOME}/.antidote:$PATH
@@ -62,8 +62,6 @@
 # ===========================================================================
 
     # VARIA
-    #alias bat='batcat'
-    #alias cat='bat'
     alias copy='xclip -selection clipboard'
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
@@ -87,11 +85,6 @@
     # DOCKER
     alias doc=docker
     alias docc=docker-compose
-
-    # GIT
-    alias g='git'
-    alias ga='git add'
-    alias gs='git status'
 
     # SCRIPTS
     alias checksum='~/.scripts/checksums.sh'
