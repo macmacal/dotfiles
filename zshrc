@@ -2,9 +2,10 @@
 # ===========================================================================
 
     export PATH=${HOME}/.antidote:$PATH
+    ANTIDOTE_DIR=${HOME}/.antidote
 
     # Load Antidote plugin manager
-    source ${HOME}/.antidote/antidote.zsh
+    source ${ANTIDOTE_DIR}/antidote.zsh
 
     # Set the root name of the plugins files (.txt and .zsh) antidote will use.
     zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -13,7 +14,7 @@
     [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
     # Lazy-load antidote from its functions directory.
-    fpath=(/path/to/antidote/functions $fpath)
+    fpath=(${ANTIDOTE_DIR}/functions $fpath)
     autoload -Uz antidote
 
     # Generate a new static file whenever .zsh_plugins.txt is updated.
