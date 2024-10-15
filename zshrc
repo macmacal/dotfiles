@@ -83,8 +83,8 @@
     fi
 
     # DOCKER
-    alias doc=docker
-    alias docc=docker-compose
+    alias doc='docker'
+    alias docc='docker compose'
 
     # SCRIPTS
     alias checksum='~/.scripts/checksums.sh'
