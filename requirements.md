@@ -9,6 +9,7 @@ mc
 neofetch
 neovim
 nvtop
+pre-commit
 ranger
 xclip
 ```

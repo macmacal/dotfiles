@@ -1,6 +1,6 @@
 # Plugins manager
 # ===========================================================================
-    
+
     export PATH=${HOME}/.antidote:$PATH
 
     # Load Antidote plugin manager
@@ -30,7 +30,7 @@
 
 # Configuration
 # ===========================================================================
-    
+
     HYPHEN_INSENSITIVE="true"
     COMPLETION_WAITING_DOTS="true"
     HIST_STAMPS="yyyy-mm-dd"
@@ -70,7 +70,7 @@
 
     # Enable usage of asterisk ('*') like in bash
     setopt extended_glob
-    
+
     # Follow directory opened in ranger
     alias r='. ranger'
 

@@ -10,7 +10,7 @@ ohmyzsh/ohmyzsh path:plugins/git                # Git autocomplete
 ohmyzsh/ohmyzsh path:plugins/extract            # Adds `extract` function for any archive filetype
 ohmyzsh/ohmyzsh path:plugins/fzf                # Integration with fzf command
 ohmyzsh/ohmyzsh path:plugins/jump               # Adds `jump` and `mark` commands for directories
-ohmyzsh/ohmyzsh path:plugins/nmap               # Informative alliases for nmap syntax
+ohmyzsh/ohmyzsh path:plugins/nmap               # Informative aliases for nmap syntax
 ohmyzsh/ohmyzsh path:plugins/pip                # Autocompletion for pip
 ohmyzsh/ohmyzsh path:plugins/rsync              # Aliases for frequent rsync commands
 

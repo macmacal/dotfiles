@@ -6,7 +6,7 @@ Plug 'tpope/vim-sensible'
 "Tool for commenting out lines
 Plug 'preservim/nerdcommenter'
 
-"NERDTree with extenions
+"NERDTree with extensions
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'hankchiutw/nerdtree-ranger.vim'
@@ -21,7 +21,7 @@ Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' 
 "Automatic adding closing brackets
 Plug 'jiangmiao/auto-pairs'
 
-"Modify surroudings of sandwiched textobject
+"Modify surroundings of sandwiched textobject
 Plug 'machakann/vim-sandwich'
 
 " Black Python Formatter
@@ -35,7 +35,7 @@ Plug 'vim-airline/vim-airline-themes'
 "Rainbow brackets
 Plug 'frazrepo/vim-rainbow'
 
-"Additonal Icons
+"Additional Icons
 " TODO fix conceal in neovim
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'

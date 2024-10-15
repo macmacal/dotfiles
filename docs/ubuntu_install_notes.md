@@ -1,5 +1,5 @@
 ## Install programs
-DO NOT INSTALL 3rd PARTY DRIVERS DURING THE OS INSTALATION!
+DO NOT INSTALL 3rd PARTY DRIVERS DURING THE OS INSTALLATION!
 
 
 ### From repos
@@ -78,7 +78,7 @@ pip3 install -r requirements_base_pip.txt
         sudo cp *.otf /usr/share/fonts/opentype/
         ```
 * kitty terminal
-    * kity terminal dropdown script dependecies
+    * kity terminal dropdown script dependencies
     ```bash
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
     sudo ln -s /home/$USER/.local/kitty.app/bin/kitty /bin/kitty
@@ -88,13 +88,13 @@ pip3 install -r requirements_base_pip.txt
     * change default shell -> `chsh -s /bin/zsh $USER`
 * GPU drivers
     * nvidia-driver, cuda
-    * `sudo apt install nvidia-driver-$NEWEST nvidia-dkms-$NEWEST` 
+    * `sudo apt install nvidia-driver-$NEWEST nvidia-dkms-$NEWEST`
 * Docker
     * docker-cuda-toolkit
 * MS Teams
     * `https://go.microsoft.com/fwlink/p/?LinkID=2112886&clcid=0x415&culture=pl-pl&country=PL`
 * ROS2
-    * see script bellow
+    * see script below
 * IDEs
     * Visual Studio Code `https://code.visualstudio.com/docs/?dv=linux64_deb`
     * CLion `sudo snap install clion --classic`
@@ -109,8 +109,8 @@ pip3 install -r requirements_base_pip.txt
     sudo cp 49-onlykey.rules /etc/udev/rules.d/
     sudo udevadm control --reload-rules && udevadm trigger
     ```
-    IF DOSENT WORK, CHECK THIS `https://github.com/trustcrypto/onlykey-agent`
-    
+    IF DOESN'T WORK, CHECK THIS `https://github.com/trustcrypto/onlykey-agent`
+
 * Python3 neovim integration
     * `sudo pip3 install pynvim`
 * Refersh neofetch pciids
@@ -132,7 +132,7 @@ pip3 install -r requirements_base_pip.txt
     * `sudo systemctl enable ssh`
 * /etc/hosts
 * ~/.zshrc_local
-* DE global shortcuts 
+* DE global shortcuts
     * flameshot `flameshot gui`
     * dropdown terminal `~/.scripts/SCRIPT.zsh`
 * DE visuals
@@ -147,7 +147,7 @@ pip3 install -r requirements_base_pip.txt
 ## Programs to configure
 * Zotero
 * Thunderbird
-* Firefox 
+* Firefox
 
 ## TODO
 * Script for automatic verification of checksums
@@ -155,7 +155,7 @@ pip3 install -r requirements_base_pip.txt
     * Fixed by KDE auto window settings
 * Fix kitty-dropdown monitor selection (KDE window focus) - somehow works on arch
     * Fixed by toying with Window Behavior activation policy
-* Fix sudo mc in kitty (dosent accept arrows keys)
+* Fix sudo mc in kitty (doesn't accept arrows keys)
 * Fix fzf config for ubuntu
 * Add Okular to .dotfiles
 
