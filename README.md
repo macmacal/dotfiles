@@ -12,4 +12,4 @@ cd ~/.dotfiles
 
 ```
 
-Remeber to update the zsh plugin manager by running command: `antidote update`
+Remember to update the zsh plugin manager by running command: `antidote update`
