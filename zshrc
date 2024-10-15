@@ -4,8 +4,7 @@
     export PATH=${HOME}/.antidote:$PATH
 
     # Load Antidote plugin manager
-    source /home/mad/.antidote/antidote.zsh
-
+    source ${HOME}/.antidote/antidote.zsh
 
     # Set the root name of the plugins files (.txt and .zsh) antidote will use.
     zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
