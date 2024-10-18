@@ -14,7 +14,7 @@
 my_term=kitty
 
 # get terminal emulator and matching name pid ex: 44040485
-term_pid=$(pidof -S $'\n' $my_term | tail -n1)
+term_pid=$(pidof -s $'\n' ${my_term})
 
 # check if the emulator window exists
 window_id=$(comm -12 <(xdotool search --pid "$term_pid") <(xdotool search --class "$my_term" | sort))
