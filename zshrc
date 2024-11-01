@@ -13,6 +13,9 @@
     # Ensure the .zsh_plugins.txt file exists so you can add plugins.
     [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
+    # Setup the OMZ theme
+    ZSH_THEME=agnoster
+
     # Lazy-load antidote from its functions directory.
     fpath=(${ANTIDOTE_DIR}/functions $fpath)
     autoload -Uz antidote
