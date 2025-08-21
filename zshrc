@@ -37,7 +37,6 @@
     HYPHEN_INSENSITIVE="true"
     COMPLETION_WAITING_DOTS="true"
     HIST_STAMPS="yyyy-mm-dd"
-    #ZSH_THEME="agnoster"
 
     # PATH
     typeset -U path cdpath fpath
@@ -83,6 +82,8 @@
       alias icat='kitty +kitten icat'
       alias kitty_setup_ssh='kitty +kitten ssh'
       alias paste='kitty +kitten clipboard --get-clipboard'
+      alias xterm-kitty-export='infocmp xterm-kitty > xterm-kitty.terminfo'
+      alias xterm-kitty-import='tic xterm-kitty.terminfo'
     fi
 
     # DOCKER
@@ -93,6 +94,7 @@
     alias checksum='~/.scripts/checksums.sh'
     alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
     alias gitler='~/.scripts/gitler.sh'
+
 
     # Neovim fuzzy finder
     # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
