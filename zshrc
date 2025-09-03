@@ -94,6 +94,7 @@
     alias checksum='~/.scripts/checksums.sh'
     alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
     alias gitler='~/.scripts/gitler.sh'
+    alias reflector_update='~/.scripts/reflector_update.sh'
 
 
     # Neovim fuzzy finder
