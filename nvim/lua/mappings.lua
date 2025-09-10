@@ -40,7 +40,7 @@ local function my_on_attach(bufnr)
   end
 
   local function file_preview()
-    api.node.open.open()
+    api.node.open.edit()
     api.tree.focus()
   end
 
