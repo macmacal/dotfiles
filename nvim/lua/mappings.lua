@@ -3,12 +3,25 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
+local wk = require("which-key")
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+-------------------------------------------------------------------------------
+-- NORMAL MODE
+
+-- Add empty lines without entering insert mode
+map('n', '<leader>o', 'o<Esc>k', { noremap = true, silent = true, desc = "Insert line below" })
+map('n', '<leader>O', 'O<Esc>j', { noremap = true, silent = true, desc = "Insert line above" })
+wk.add({
+ { "<leader>o", desc = "Insert line below", icon = "" },
+ { "<leader>O", desc = "Insert line above", icon = "" },
+})
+
+-------------------------------------------------------------------------------
 -- Nvim-tree mappings
 local function my_on_attach(bufnr)
   local api = require "nvim-tree.api"
