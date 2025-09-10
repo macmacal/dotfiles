@@ -96,6 +96,8 @@
     alias gitler='~/.scripts/gitler.sh'
     alias reflector_update='~/.scripts/reflector_update.sh'
 
+    # Fixing flameshot in KDE wayland
+    # QT_QPA_PLATFORM=xcb flameshot gui
 
     # Neovim fuzzy finder
     # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -118,3 +120,4 @@
 # ===========================================================================
     source ~/.zshrc_local
 # // Machine depended config
+#
