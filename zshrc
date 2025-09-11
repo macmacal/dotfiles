@@ -96,8 +96,10 @@
     alias gitler='~/.scripts/gitler.sh'
     alias reflector_update='~/.scripts/reflector_update.sh'
     alias kitty_update='~/.scripts/kitty_update.sh'
+    alias rm_shred="shred -v -n 5 -z -u"
 
     alias install_onlykey-agent="pipx install onlykey-agent"
+    alias onlykey-agent-shell="onlykey-agent ~/.ssh/onlykey/github.pub -v --shell"
 
     # Fixing flameshot in KDE wayland
     # QT_QPA_PLATFORM=xcb flameshot gui
