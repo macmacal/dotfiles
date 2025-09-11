@@ -97,6 +97,8 @@
     alias reflector_update='~/.scripts/reflector_update.sh'
     alias kitty_update='~/.scripts/kitty_update.sh'
 
+    alias install_onlykey-agent="pipx install onlykey-agent"
+
     # Fixing flameshot in KDE wayland
     # QT_QPA_PLATFORM=xcb flameshot gui
 
