@@ -95,6 +95,7 @@
     alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
     alias gitler='~/.scripts/gitler.sh'
     alias reflector_update='~/.scripts/reflector_update.sh'
+    alias kitty_update='~/.scripts/kitty_update.sh'
 
     # Fixing flameshot in KDE wayland
     # QT_QPA_PLATFORM=xcb flameshot gui
