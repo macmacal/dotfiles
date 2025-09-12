@@ -52,7 +52,7 @@ local function my_on_attach(bufnr)
     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
-  local function file_preview()
+  local function file_open_no_focus()
     api.node.open.edit()
     api.tree.focus()
   end
@@ -64,9 +64,9 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,    opts('Up'))
   vim.keymap.set('n', '?',     api.tree.toggle_help,              opts('Help'))
   vim.keymap.set("n", "l",     api.node.open.edit,                opts("Open & enter"))
-  vim.keymap.set("n", "L",     file_preview,                      opts("Open"))
-  vim.keymap.set("n", "h",     "<Nop>",                           opts("Disable h key"))
-  vim.keymap.set("n", "H",     api.tree.collapse_all,             opts("Collapse All"))
+  vim.keymap.set("n", "L",     file_open_no_focus,                opts("Open"))
+  vim.keymap.set("n", "h",     api.node.open.preview,             opts("Disable h key"))
+  vim.keymap.set("n", "K",     api.tree.collapse_all,             opts("Collapse All"))
   vim.keymap.set('n', 'ga',    git_add,                           opts('Git Add'))
 end
 
