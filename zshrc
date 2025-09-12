@@ -96,6 +96,8 @@
     alias gitler='~/.scripts/gitler.sh'
     alias reflector_update='~/.scripts/reflector_update.sh'
     alias kitty_update='~/.scripts/kitty_update.sh'
+    alias register_u2f="~/.scripts/register_u2f.sh"
+    alias ssh-keygen_u2f="ssh-keygen -t ed25519-sk"
     alias rm_shred="shred -v -n 5 -z -u"
 
     alias install_onlykey-agent="pipx install onlykey-agent"
