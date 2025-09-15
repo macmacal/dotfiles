@@ -14,7 +14,6 @@ return {
   },
 
   -- TODO Remote nvim server
-
   -- test new blink
   { import = "nvchad.blink.lazyspec" },
 
