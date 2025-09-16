@@ -26,3 +26,6 @@ if ! echo ":$PATH:" | grep -q ":$HOME/.local/bin:"; then
     echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/$SHELL_CFG"
     export PATH="$HOME/.local/bin:$PATH"
 fi
+
+echo "Done: nvim installed to $NVIM_OPT and linked to $NVIM_SYMLINK."
+echo "Make sure to restart or re-source your shell"
