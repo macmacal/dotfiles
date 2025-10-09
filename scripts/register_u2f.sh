@@ -34,13 +34,12 @@ fi
 
 # 2. Prepare config folder
 mkdir -p ~/.config/Yubico
-
 # 3. Register key or append
 U2F_FILE="$HOME/.config/Yubico/u2f_keys"
 if [ ! -f "$U2F_FILE" ]; then
     echo "Registering first U2F key for ${HOST} ..."
     pamu2fcfg -o pam://"${HOST}" -i pam://"${HOST}" > "$U2F_FILE"
-    chmod g-w,o-w "${U2F_FILE}"
+    chmod o-w "${U2F_FILE}"
 else
     echo "Appending new U2F key for ${HOST} ..."
     pamu2fcfg -o pam://"${HOST}" -i pam://"${HOST}" -n >> "$U2F_FILE"
