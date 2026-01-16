@@ -11,3 +11,6 @@
 [submodule "ranger/plugins/ranger_fzf_filter"]
 	path = ranger/plugins/ranger_fzf_filter
 	url = https://github.com/MuXiu1997/ranger-fzf-filter.git
+[submodule "ranger/plugins/ranger_tmux"]
+	path = ranger/plugins/ranger_tmux
+	url = https://github.com/joouha/ranger_tmux.git
