@@ -100,6 +100,7 @@
     alias nvim_local_install="~/.scripts/nvim_local_install.sh"
     alias ssh-keygen_u2f="ssh-keygen -t ed25519-sk"
     alias rm_shred="shred -v -n 5 -z -u"
+    alias recurrent_unzip="~/.scripts/recurrent_unzip.sh"
 
     alias install_onlykey-agent="pipx install onlykey-agent"
     alias onlykey-agent-shell="onlykey-agent ~/.ssh/onlykey/github.pub -v --shell"
