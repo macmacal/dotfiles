@@ -26,7 +26,7 @@
 - shell:
     - [
         "sh .dotbot_scripts/install_plugin_managers.sh",
-        Installing ZSH plugin manager,
+        Installing plugin managers,
       ]
     - ["touch ~/.zshrc_local", Touched ~/.zshrc_local file]
     - ["zsh", Installing zsh plugins]
