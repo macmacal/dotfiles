@@ -68,7 +68,6 @@
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
     alias vim='nvim'
-    alias r='. ranger'
 
     # Enable usage of asterisk ('*') like in bash
     setopt extended_glob
@@ -86,13 +85,8 @@
       alias xterm-kitty-import='tic xterm-kitty.terminfo'
     fi
 
-    # DOCKER
-    alias doc='docker'
-    alias docc='docker compose'
-
     # SCRIPTS
     alias checksum='~/.scripts/checksums.sh'
-    alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
     alias gitler='~/.scripts/gitler.sh'
     alias reflector_update='~/.scripts/reflector_update.sh'
     alias kitty_update='~/.scripts/kitty_update.sh'
@@ -104,12 +98,6 @@
 
     alias install_onlykey-agent="pipx install onlykey-agent"
     alias onlykey-agent-shell="onlykey-agent ~/.ssh/onlykey/github.pub -v --shell"
-
-    # Fixing flameshot in KDE wayland
-    # QT_QPA_PLATFORM=xcb flameshot gui
-
-    # Neovim fuzzy finder
-    # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
     # fzf TODO read more about ack/ag commands and usage with fzf + fd
     # source /usr/share/fzf/key-bindings.zsh
