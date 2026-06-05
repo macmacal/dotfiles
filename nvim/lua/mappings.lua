@@ -13,6 +13,8 @@ map("i", "jk", "<ESC>")
 -------------------------------------------------------------------------------
 -- NORMAL MODE
 
+map('n', '<leader>ll', '<cmd>Lazy<cr>', { noremap = true, silent = true, desc = "Lazy manager" })
+
 -- Add empty lines without entering insert mode
 map('n', '<leader>o', 'o<Esc>k', { noremap = true, silent = true, desc = "Insert line below" })
 map('n', '<leader>O', 'O<Esc>j', { noremap = true, silent = true, desc = "Insert line above" })
