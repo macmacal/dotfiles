@@ -14,6 +14,7 @@ map("i", "jk", "<ESC>")
 -- NORMAL MODE
 
 map('n', '<leader>ll', '<cmd>Lazy<cr>', { noremap = true, silent = true, desc = "Lazy manager" })
+map('n', '<leader>bd', '<cmd>bn | bd #<cr>', { noremap = true, silent = true, desc = "Change and close buffer" })
 
 -- Add empty lines without entering insert mode
 map('n', '<leader>o', 'o<Esc>k', { noremap = true, silent = true, desc = "Insert line below" })
@@ -87,6 +88,14 @@ map("n", "<c-j>", "<cmd>:TmuxNavigateDown<cr>")
 map("n", "<c-k>", "<cmd>:TmuxNavigateUp<cr>")
 map("n", "<c-l>", "<cmd>:TmuxNavigateRight<cr>")
 map("n", "<c-\\>", "<cmd>:TmuxNavigatePrevious<cr>")
+
+-- More info from the LSP output
+unmap("n", "<leader>n")
+unmap("n", "<leader>h")
+map("n", "<leader>h", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "LSP info" })
+wk.add({
+ { "<leader>h", desc = "LSP info", icon = "󱆾" },
+})
 
 -- pass to setup along with your other options
 require("nvim-tree").setup {
