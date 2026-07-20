@@ -13,6 +13,7 @@ map("i", "jk", "<ESC>")
 -------------------------------------------------------------------------------
 -- NORMAL MODE
 
+map('n', '<leader>lm', '<cmd>Mason<cr>', { noremap = true, silent = true, desc = "Mason manager" })
 map('n', '<leader>ll', '<cmd>Lazy<cr>', { noremap = true, silent = true, desc = "Lazy manager" })
 map('n', '<leader>bd', '<cmd>bn | bd #<cr>', { noremap = true, silent = true, desc = "Change and close buffer" })
 
