@@ -14,3 +14,6 @@
 [submodule "ranger/plugins/ranger_tmux"]
 	path = ranger/plugins/ranger_tmux
 	url = https://github.com/joouha/ranger_tmux.git
+[submodule "ranger/plugins/ranger-gitplug"]
+	path = ranger/plugins/ranger-gitplug
+  url = https://github.com/DogeTheBeast/ranger-gitplug.git
