@@ -94,9 +94,9 @@ map("n", "<c-\\>", "<cmd>:TmuxNavigatePrevious<cr>")
 -- More info from the LSP output
 unmap("n", "<leader>n")
 unmap("n", "<leader>h")
-map("n", "<leader>h", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "LSP info" })
+map("n", "<leader>dh", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "LSP info" })
 wk.add({
- { "<leader>h", desc = "LSP info", icon = "󱆾" },
+ { "<leader>dh", desc = "LSP info", icon = "󱆾" },
 })
 
 -- pass to setup along with your other options
