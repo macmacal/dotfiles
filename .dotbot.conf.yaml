@@ -30,3 +30,7 @@
       ]
     - ["touch ~/.zshrc_local", Touched ~/.zshrc_local file]
     - ["zsh", Installing zsh plugins]
+    - [
+        "sh .dotbot_scripts/install_neovim_tools.sh",
+        Installing neovim CLI tools,
+      ]
