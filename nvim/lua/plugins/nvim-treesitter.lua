@@ -1,0 +1,25 @@
+return {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    build = ":TSUpdate | TSInstallAll",
+    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+    opts = {
+      ensure_installed = {
+  			"vim", "lua", "vimdoc",
+        "bash", "zsh",
+        "c", "cpp", "make", "cmake",
+        "dockerfile",
+        "git_config", "gitignore",
+        "markdown", "markdown_inline",
+        "python",
+        "query",
+        "ssh_config",
+        "xml",
+        "yaml", "json", "toml",
+        "latex",
+  		},
+      highlight = { enable = true },
+    },
+}
