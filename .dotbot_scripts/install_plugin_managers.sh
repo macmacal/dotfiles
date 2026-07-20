@@ -1,8 +1,18 @@
 #!/bin/sh
+set -e
 
-# ZSH plugin manager Antidote
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+clone_or_update() {
+    repo_dir="$1"
+    repo_url="$2"
 
-# Neovim-plug plugin manager
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    if [ -d "$repo_dir/.git" ]; then
+        echo "Updating $(basename "$repo_dir")..."
+        git -C "$repo_dir" pull --ff-only
+    else
+        echo "Cloning $(basename "$repo_dir")..."
+        git clone --depth=1 "$repo_url" "$repo_dir"
+    fi
+}
+
+clone_or_update "${ZDOTDIR:-$HOME}/.antidote" "https://github.com/mattmc3/antidote.git"
+clone_or_update "$HOME/.tmux/plugins/tpm" "https://github.com/tmux-plugins/tpm.git"

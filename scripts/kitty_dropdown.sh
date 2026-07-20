@@ -1,32 +1,49 @@
-#!/usr/bin/bash
-# AUTHOR: macmacal, based on original script by gotbletu
-# DESC:   turn kitty terminal (xwindow) into a dropdown terminal
-# DEPEND: coreutils xdotool wmutils
+#!/bin/bash
 
-# get screen resolution width and height
-# ROOT=$(lsw -r)
-# width=$(wattr w $ROOT)
-# height=$(wattr h $ROOT)
-# width=1920
-# height=1080
+LAST_MONITOR=""
 
-# select terminal emulator manually
-my_term=kitty
-
-# get terminal emulator and matching name pid ex: 44040485
-term_pid=$(pidof -s $'\n' ${my_term})
-
-# check if the emulator window exists
-window_id=$(comm -12 <(xdotool search --pid "$term_pid") <(xdotool search --class "$my_term" | sort))
-
-# start a new terminal if none is currently running
-if [[ -z $window_id ]]; then
-    ${my_term} &>/dev/null &
+# Detect session type
+if [ "$XDG_SESSION_TYPE" == "x11" ]; then
+    SESSION="X11"
+elif [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+    # Check if Mutter is your compositor
+    if pgrep -x "mutter" > /dev/null; then
+        SESSION="MUTTER"
+    else
+        SESSION="WAYLAND"
+    fi
 else
-    # get windows id from pid ex: 0x2a00125%
-    wid=$(printf '0x%x' "$window_id")
-    # toggle show/hide terminal emulator
-    mapw -t "$wid"
-    # maximize terminal emulator
-    #wrs $width $height $wid
+    SESSION="UNKNOWN"
 fi
+
+# X11 logic: get monitor from focused window
+if [ "$SESSION" == "X11" ]; then
+    WIN_ID=$(xdotool getwindowfocus)
+    # Get window geometry (position)
+    WIN_GEOM=($(xdotool getwindowgeometry "$WIN_ID" | awk '/Position:/ {split($2,a,","); print a[1],a[2]}'))
+    WIN_X=${WIN_GEOM[0]}
+    WIN_Y=${WIN_GEOM[1]}
+    # List outputs and their geometry
+    while read name x y w h; do
+        if (( WIN_X >= x && WIN_X < x + w && WIN_Y >= y && WIN_Y < y + h )); then
+            LAST_MONITOR="$name"
+            break
+        fi
+    done < <(xrandr --listmonitors | awk 'NR>1{print $4,$2,$3,$5,$6}' | tr -d '+')
+fi
+
+# MUTTER/GNOME/WAYLAND logic (fallback to dbus for GNOME Shell 3.15+)
+if [ "$SESSION" == "MUTTER" ] || [ "$SESSION" == "WAYLAND" ]; then
+    # Try to get the name of the focused window's output (requires gdbus and GNOME)
+    ACTIVE_APP=$(gdbus call -e -d org.gnome.Shell -o /org/gnome/Shell -m org.gnome.Shell.Eval "global.get_window_actors().findIndex(a=>a.meta_window.has_focus())")
+    if [ -n "$ACTIVE_APP" ]; then
+        ACTIVE_OUTPUT=$(gdbus call -e -d org.gnome.Shell -o /org/gnome/Shell -m org.gnome.Shell.Eval "global.get_window_actors()[$ACTIVE_APP].get_meta_window().get_monitor().get_name()")
+        LAST_MONITOR="$ACTIVE_OUTPUT"
+    fi
+fi
+
+export LAST_MONITOR
+echo "LAST_MONITOR=$LAST_MONITOR"
+echo "SESSION=$SESSION"
+
+kitten quick-access-terminal --detach

@@ -68,7 +68,6 @@
     alias dotfiles="cd ~/.dotfiles"
     alias paste='xclip -o -selection clipboard'
     alias vim='nvim'
-    alias r='. ranger'
 
     # Enable usage of asterisk ('*') like in bash
     setopt extended_glob
@@ -86,19 +85,19 @@
       alias xterm-kitty-import='tic xterm-kitty.terminfo'
     fi
 
-    # DOCKER
-    alias doc='docker'
-    alias docc='docker compose'
-
     # SCRIPTS
     alias checksum='~/.scripts/checksums.sh'
-    alias dwm_install='~/.scripts/recompile_dwm_dmenu.sh'
     alias gitler='~/.scripts/gitler.sh'
     alias reflector_update='~/.scripts/reflector_update.sh'
+    alias kitty_update='~/.scripts/kitty_update.sh'
+    alias register_u2f="~/.scripts/register_u2f.sh"
+    alias nvim_local_install="~/.scripts/nvim_local_install.sh"
+    alias ssh-keygen_u2f="ssh-keygen -t ed25519-sk"
+    alias rm_shred="shred -v -n 5 -z -u"
+    alias recurrent_unzip="~/.scripts/recurrent_unzip.sh"
 
-
-    # Neovim fuzzy finder
-    # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    alias install_onlykey-agent="pipx install onlykey-agent"
+    alias onlykey-agent-shell="onlykey-agent ~/.ssh/onlykey/github.pub -v --shell"
 
     # fzf TODO read more about ack/ag commands and usage with fzf + fd
     # source /usr/share/fzf/key-bindings.zsh
@@ -118,3 +117,4 @@
 # ===========================================================================
     source ~/.zshrc_local
 # // Machine depended config
+#

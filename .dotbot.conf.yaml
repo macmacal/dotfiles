@@ -16,6 +16,7 @@
     ~/.config/kitty: kitty
     ~/.config/nvim: nvim
     ~/.config/ranger: ranger
+    ~/.tmux.conf: tmux.conf
     ~/.zsh_plugins.txt: zsh_plugins.txt
     ~/.zshrc: zshrc
     ~/.scripts:
@@ -25,8 +26,7 @@
 - shell:
     - [
         "sh .dotbot_scripts/install_plugin_managers.sh",
-        Installing neovim & ZSH plugin managers,
+        Installing plugin managers,
       ]
-    - ["nvim +PlugUpdate +PlugClean! +qa", Installing neovim plugins]
     - ["touch ~/.zshrc_local", Touched ~/.zshrc_local file]
     - ["zsh", Installing zsh plugins]

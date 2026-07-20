@@ -12,4 +12,5 @@ nvtop
 pre-commit
 ranger
 xclip
+lazygit
 ```
