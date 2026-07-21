@@ -26,6 +26,14 @@ wk.add({
  { "<leader>O", desc = "Insert line above", icon = "" },
 })
 
+
+-- Icons for todo comments
+wk.add({
+ { "<leader>ft", desc = "telescope find TODOs", icon = {icon = "", color = "cyan"}},
+ { "<leader>dt", desc = "TODOs loclist", icon = {icon = "󱖫", color = "cyan"}},
+})
+
+
 -------------------------------------------------------------------------------
 -- Nvim-tree mappings
 local function my_on_attach(bufnr)
