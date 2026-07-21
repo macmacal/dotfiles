@@ -14,4 +14,5 @@ return {
 
   { import = "nvchad.blink.lazyspec" },
 
+  { 'nvim-mini/mini.icons', version = false },
 }
